@@ -1,0 +1,43 @@
+# adapted from https://hub.docker.com/_/wordpress for dev only
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile-wordpress
+    restart: unless-stopped
+    ports:
+      - 80:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: dev
+      WORDPRESS_DB_PASSWORD: dev
+      WORDPRESS_DB_NAME: ssl-alert-wp
+      # debug mode
+      WORDPRESS_DEBUG: 1
+    volumes:
+      - ./plugins/ssl-alert-wp:/var/www/html/wp-content/plugins/ssl-alert-wp:ro
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: ssl-alert-wp
+      MYSQL_USER: dev
+      MYSQL_PASSWORD: dev
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    # i don't want to keep data
+    # volumes:
+    #   - db:/var/lib/mysql
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
+    depends_on:
+      - db
+# volumes:
+#   wordpress:
+#   db:

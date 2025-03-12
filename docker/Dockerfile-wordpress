@@ -1,0 +1,9 @@
+# layers are just here to test plugin faster
+# we don't need to build the image every time
+# layers are not optimized
+
+# specify another tag for another wordpress or php version
+# https://hub.docker.com/_/wordpress/tags
+FROM wordpress:latest
+COPY plugins/ssl-alert-wp/languages /var/www/html/wp-content/languages/plugins
+RUN chown -R www-data:www-data /var/www/html/wp-content/languages
