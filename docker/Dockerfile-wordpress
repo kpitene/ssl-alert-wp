@@ -5,5 +5,10 @@
 # specify another tag for another wordpress or php version
 # https://hub.docker.com/_/wordpress/tags
 FROM wordpress:latest
+# to regenrate pot file if needed 
+# with wp i18n make-pot plugins/ssl-alert-wp/ plugins/ssl-alert-wp/languages/ssl-alert-wp.pot
+RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+ && chmod +x wp-cli.phar \
+ && mv wp-cli.phar /usr/local/bin/wp
 COPY plugins/ssl-alert-wp/languages /var/www/html/wp-content/languages/plugins
 RUN chown -R www-data:www-data /var/www/html/wp-content/languages

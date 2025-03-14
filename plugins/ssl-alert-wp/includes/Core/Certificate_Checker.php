@@ -15,15 +15,17 @@ class Certificate_Checker {
         if (empty($url)) {
             return [
                 'valid' => false,
+                // translators: %s: no URL provided error
                 'error' => __('No URL provided', 'ssl-alert-wp')
             ];
         }
 
         // Parse URL and ensure it's HTTPS
-        $parsed_url = parse_url($url);
+        $parsed_url = wp_parse_url($url);
         if (!isset($parsed_url['scheme']) || $parsed_url['scheme'] !== 'https') {
             return [
                 'valid' => false,
+                // translators: %s: HTTPS protocol error
                 'error' => __('URL must use HTTPS protocol', 'ssl-alert-wp')
             ];
         }
@@ -37,7 +39,7 @@ class Certificate_Checker {
                 'capture_peer_cert' => true,
                 'verify_peer' => false,
                 'verify_peer_name' => false,
-            ]
+            ],
         ]);
 
         // Try to establish connection
@@ -54,7 +56,8 @@ class Certificate_Checker {
             return [
                 'valid' => false,
                 'error' => sprintf(
-                    __('Could not connect to %s: %s', 'ssl-alert-wp'),
+                    // translators: %1$s: URL, %2$s: error message
+                    __('Could not connect to %1$s: %2$s', 'ssl-alert-wp'),
                     $host,
                     $errstr
                 )
@@ -68,6 +71,7 @@ class Certificate_Checker {
         if (!$cert) {
             return [
                 'valid' => false,
+                // translators: %s: parse error
                 'error' => __('Could not parse SSL certificate', 'ssl-alert-wp')
             ];
         }
@@ -77,52 +81,16 @@ class Certificate_Checker {
         $current_timestamp = time();
         $days_remaining = floor(($expiry_timestamp - $current_timestamp) / (60 * 60 * 24));
 
-        fclose($client);
+        // for compatibility with plugin check which is mandatory
+        // fclose($client);
 
         return [
             'valid' => true,
             'days_remaining' => $days_remaining,
-            'expiry_date' => date('Y-m-d H:i:s', $expiry_timestamp),
+            'expiry_date' => gmdate('Y-m-d H:i:s', $expiry_timestamp),
+            // translators: %s: Unknown
             'issuer' => $cert['issuer']['O'] ?? __('Unknown', 'ssl-alert-wp'),
             'subject' => $cert['subject']['CN'] ?? $host,
-        ];
-    }
-
-    /**
-     * Manually trigger certificate check
-     *
-     * @param string $url URL to check
-     * @return array Check results with formatted message
-     */
-    public function manual_check($url) {
-        $result = $this->check($url);
-        
-        if (!$result['valid']) {
-            return [
-                'status' => 'error',
-                'message' => $result['error']
-            ];
-        }
-
-        if ($result['days_remaining'] <= 0) {
-            return [
-                'status' => 'expired',
-                'message' => sprintf(
-                    __('Certificate expired on %s', 'ssl-alert-wp'),
-                    $result['expiry_date']
-                )
-            ];
-        }
-
-        return [
-            'status' => 'valid',
-            'message' => sprintf(
-                __('Certificate is valid. Expires in %d days on %s. Issued by %s for %s.', 'ssl-alert-wp'),
-                $result['days_remaining'],
-                $result['expiry_date'],
-                $result['issuer'],
-                $result['subject']
-            )
         ];
     }
 }

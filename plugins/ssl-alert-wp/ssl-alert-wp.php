@@ -5,7 +5,7 @@
  * Description: Monitor your SSL certificate expiration and receive notifications before it expires.
  * Version: 1.0.0
  * Author: Kpitene
- * Author URI: https://wordpress.org/plugins/ssl-alert-wp/
+ * Author URI: https://kpitene.fr
  * Text Domain: ssl-alert-wp
  * Domain Path: /languages
  * License: GPL v2 or later

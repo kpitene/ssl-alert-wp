@@ -1,8 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: SSL Alert WP\n"
-"POT-Creation-Date: 2025-03-09 15:24+0100\n"
-"PO-Revision-Date: 2025-03-09 16:24+0100\n"
+"Project-Id-Version: SSL Alert WP 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ssl-alert-wp\n"
+"POT-Creation-Date: 2025-03-14T07:42:42+00:00\n"
+"PO-Revision-Date: 2025-03-14 16:17+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,111 +12,79 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.0.1\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-Basepath: ..\n"
-"X-Poedit-SearchPath-0: .\n"
+"X-Domain: ssl-alert-wp\n"
 
-msgid "No URL provided"
-msgstr "Aucune URL fournie"
+msgid "SSL Alert WP"
+msgstr "SSL Alert WP"
 
-msgid "URL must use HTTPS protocol"
-msgstr "L'URL doit utiliser le protocole HTTPS"
+msgid "https://wordpress.org/plugins/ssl-alert-wp/"
+msgstr "https://wordpress.org/plugins/ssl-alert-wp/"
 
-msgid "Could not connect to %s: %s"
-msgstr "Impossible de se connecter à %s : %s"
+msgid "Monitor your SSL certificate expiration and receive notifications before it expires."
+msgstr "Surveillez l'expiration de votre certificat SSL et recevez des notifications avant qu'il n'expire."
 
-msgid "Could not parse SSL certificate"
-msgstr "Impossible d'analyser le certificat SSL"
-
-msgid "Unknown"
-msgstr "Inconnu"
-
-msgid "Certificate expired on %s"
-msgstr "Le certificat a expiré le %s"
-
-msgid "Certificate is valid. Expires in %d days on %s. Issued by %s for %s."
-msgstr "Le certificat est valide. Expire dans %d jours le %s. Émis par %s pour %s."
-
-msgid "[%s] SSL Certificate Has Expired"
-msgstr "[%s] Le certificat SSL a expiré"
-
-msgid "The SSL certificate for %s has expired on %s. Please renew it immediately to avoid browser warnings and potential security risks."
-msgstr "Le certificat SSL pour %s a expiré le %s. Veuillez le renouveler immédiatement pour éviter les avertissements du navigateur et les risques de sécurité potentiels."
-
-msgid "[%s] SSL Certificate Expires in %d Days"
-msgstr "[%s] Le certificat SSL expire dans %d jours"
-
-msgid "The SSL certificate for %s will expire on %s (%d days from now). Please ensure it is renewed before expiration to avoid browser warnings and potential security risks."
-msgstr "Le certificat SSL pour %s expirera le %s (dans %d jours). Veuillez vous assurer qu'il est renouvelé avant son expiration pour éviter les avertissements du navigateur et les risques de sécurité potentiels."
-
-msgid "[%s] SSL Certificate Check Failed"
-msgstr "[%s] La vérification du certificat SSL a échoué"
-
-msgid "Failed to check SSL certificate for %s. Error: %s"
-msgstr "Échec de la vérification du certificat SSL pour %s. Erreur : %s"
-
-msgid "This notification was sent by the SSL Alert WP plugin. You can configure notification settings in the WordPress admin panel at %s."
-msgstr "Cette notification a été envoyée par le plugin SSL Alert WP. Vous pouvez configurer les paramètres de notification dans le panneau d'administration WordPress à %s."
+msgid "Kpitene"
+msgstr "Kpitene"
 
 msgid "SSL Certificate Monitor"
-msgstr "Moniteur de certificat SSL"
+msgstr "Moniteur de Certificat SSL"
 
 msgid "SSL Monitor"
 msgstr "Moniteur SSL"
 
 msgid "SSL Certificate Monitoring Settings"
-msgstr "Paramètres de surveillance du certificat SSL"
+msgstr "Paramètres de Surveillance du Certificat SSL"
 
 msgid "URL to Monitor"
-msgstr "URL à surveiller"
+msgstr "URL à Surveiller"
 
 msgid "Notification Days"
-msgstr "Jours de notification"
+msgstr "Jours de Notification"
 
 msgid "Notification Emails"
-msgstr "Emails de notification"
-
-msgid "Daily Notifications After Expiry"
-msgstr "Notifications quotidiennes après expiration"
+msgstr "Emails de Notification"
 
 msgid "Checking..."
 msgstr "Vérification..."
 
 msgid "Check Now"
-msgstr "Vérifier maintenant"
+msgstr "Vérifier Maintenant"
+
+msgid "Send Test Notification"
+msgstr "Envoyer une Notification de Test"
 
 msgid "Last check: %s"
 msgstr "Dernière vérification : %s"
 
+msgid "Manual Check"
+msgstr "Vérification Manuelle"
+
+msgid "Click the button below to check the SSL certificate status immediately:"
+msgstr "Cliquez sur le bouton ci-dessous pour vérifier immédiatement l'état du certificat SSL :"
+
+msgid "Test Notification"
+msgstr "Notification de Test"
+
+msgid "Click the button below to send a test notification:"
+msgstr "Cliquez sur le bouton ci-dessous pour envoyer une notification de test :"
+
 msgid "Configure how and when you want to be notified about SSL certificate expiration."
-msgstr "Configurez comment et quand vous souhaitez être notifié de l'expiration du certificat SSL."
+msgstr "Configurez quand et comment vous souhaitez être notifié de l'expiration du certificat SSL."
 
 msgid "The HTTPS URL to monitor. Leave empty to use your site URL."
 msgstr "L'URL HTTPS à surveiller. Laissez vide pour utiliser l'URL de votre site."
 
 msgid "Comma-separated list of days before expiration to send notifications. Example: 14,7,1"
-msgstr "Liste des jours avant expiration pour envoyer des notifications, séparés par des virgules. Exemple : 14,7,1"
+msgstr "Liste des jours avant expiration pour l'envoi des notifications, séparés par des virgules. Exemple : 14,7,1"
 
 msgid "Comma-separated list of email addresses to notify. Leave empty to use admin email."
 msgstr "Liste des adresses email à notifier, séparées par des virgules. Laissez vide pour utiliser l'email de l'administrateur."
 
-msgid "Send daily notifications after certificate expires"
-msgstr "Envoyer des notifications quotidiennes après l'expiration du certificat"
-
-msgid "Manual Check"
-msgstr "Vérification manuelle"
-
-msgid "Click the button below to check the SSL certificate status immediately:"
-msgstr "Cliquez sur le bouton ci-dessous pour vérifier immédiatement l'état du certificat SSL :"
-
-msgid "Click the button below to send a test notification:"
-msgstr "Cliquez sur le bouton ci-dessous pour envoyer une notification de test :"
-
-msgid "Send Test Notification"
-msgstr "Envoyer une notification de test"
-
 msgid "Unauthorized"
 msgstr "Non autorisé"
+
+msgid "Check failed - no result available"
+msgstr "Échec de la vérification - aucun résultat disponible"
 
 msgid "Test Notification from SSL Alert WP"
 msgstr "Notification de test de SSL Alert WP"
@@ -128,3 +97,51 @@ msgstr "Notification de test envoyée avec succès."
 
 msgid "Failed to send test notification."
 msgstr "Échec de l'envoi de la notification de test."
+
+msgid "No URL provided"
+msgstr "Aucune URL fournie"
+
+msgid "URL must use HTTPS protocol"
+msgstr "L'URL doit utiliser le protocole HTTPS"
+
+msgid "Could not connect to %1$s: %2$s"
+msgstr "Impossible de se connecter à %1$s : %2$s"
+
+msgid "Could not parse SSL certificate"
+msgstr "Impossible d'analyser le certificat SSL"
+
+msgid "Unknown"
+msgstr "Inconnu"
+
+msgid "[%s] SSL Certificate Has Expired"
+msgstr "[%s] Le certificat SSL a expiré"
+
+msgid "The SSL certificate for %1$s has expired on %2$s. Please renew it immediately to avoid browser warnings and potential security risks."
+msgstr "Le certificat SSL pour %1$s a expiré le %2$s. Veuillez le renouveler immédiatement pour éviter les avertissements du navigateur et les risques de sécurité potentiels."
+
+msgid "[%1$s] SSL Certificate Expires in %2$d Days"
+msgstr "[%1$s] Le certificat SSL expire dans %2$d jours"
+
+msgid "The SSL certificate for %1$s will expire on %2$s (%3$d days from now). Please ensure it is renewed before expiration to avoid browser warnings and potential security risks."
+msgstr "Le certificat SSL pour %1$s expirera le %2$s (dans %3$d jours). Veuillez vous assurer qu'il est renouvelé avant son expiration pour éviter les avertissements du navigateur et les risques de sécurité potentiels."
+
+msgid "[%s] SSL Certificate Check Failed"
+msgstr "[%s] La vérification du certificat SSL a échoué"
+
+msgid "Failed to check SSL certificate for %1$s. Error: %2$s"
+msgstr "Échec de la vérification du certificat SSL pour %1$s. Erreur : %2$s"
+
+msgid "Certificate has expired on %1$s."
+msgstr "Le certificat a expiré le %1$s."
+
+msgid "WARNING: Certificate will expire in %1$d days (on %2$s). A notification email has been sent. Issued by %3$s for %4$s."
+msgstr "ATTENTION : Le certificat expirera dans %1$d jours (le %2$s). Un email de notification a été envoyé. Émis par %3$s pour %4$s."
+
+msgid "Certificate is valid. Expires in %1$d days on %2$s. Issued by %3$s for %4$s."
+msgstr "Le certificat est valide. Expire dans %1$d jours le %2$s. Émis par %3$s pour %4$s."
+
+msgid "This notification was sent by the SSL Alert WP plugin. You can configure notification settings in the WordPress admin panel at %s."
+msgstr "Cette notification a été envoyée par le plugin SSL Alert WP. Vous pouvez configurer les paramètres de notification dans le panneau d'administration WordPress à %s."
+
+msgid "This notification was sent by the SSL Alert WP plugin. You can configure notification settings in the WordPress admin panel."
+msgstr "Cette notification a été envoyée par le plugin SSL Alert WP. Vous pouvez configurer les paramètres de notification dans le panneau d'administration WordPress."

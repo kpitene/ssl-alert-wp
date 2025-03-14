@@ -19,7 +19,6 @@ class Settings {
         'monitored_url' => '',
         'notification_days' => [14, 7, 1],
         'notification_emails' => [],
-        'daily_after_expiry' => true,
         'last_check' => '',
         'last_check_result' => [],
     ];
@@ -65,10 +64,10 @@ class Settings {
      * @param string $url
      * @return bool
      */
-    public function set_monitored_url($url) {
-        $this->settings['monitored_url'] = esc_url_raw($url);
-        return $this->save();
-    }
+    // public function set_monitored_url($url) {
+    //     $this->settings['monitored_url'] = esc_url_raw($url);
+    //     return $this->save();
+    // }
 
     /**
      * Get notification days
@@ -94,13 +93,13 @@ class Settings {
      * @param array $days
      * @return bool
      */
-    public function set_notification_days($days) {
-        if (is_string($days)) {
-            $days = array_filter(array_map('trim', explode(',', $days)));
-        }
-        $this->settings['notification_days'] = array_map('absint', $days);
-        return $this->save();
-    }
+    // public function set_notification_days($days) {
+    //     if (is_string($days)) {
+    //         $days = array_filter(array_map('trim', explode(',', $days)));
+    //     }
+    //     $this->settings['notification_days'] = array_map('absint', $days);
+    //     return $this->save();
+    // }
 
     /**
      * Get notification emails
@@ -108,7 +107,7 @@ class Settings {
      * @return array
      */
     public function get_notification_emails() {
-        return isset($this->settings['notification_emails']) ? $this->settings['notification_emails'] : $this->defaults['notification_emails'];
+        return isset($this->settings['notification_emails']) ? (array) $this->settings['notification_emails'] : $this->defaults['notification_emails'];
     }
 
     /**
@@ -117,34 +116,10 @@ class Settings {
      * @param array $emails
      * @return bool
      */
-    public function set_notification_emails($emails) {
-        if (is_string($emails)) {
-            $emails = array_filter(array_map('trim', explode(',', $emails)));
-        }
-        $this->settings['notification_emails'] = array_filter(array_map('sanitize_email', $emails));
-        return $this->save();
-    }
-
-    /**
-     * Get daily after expiry setting
-     *
-     * @return bool
-     */
-    public function get_daily_after_expiry() {
-        return isset($this->settings['daily_after_expiry']) ? (bool) $this->settings['daily_after_expiry'] : $this->defaults['daily_after_expiry'];
-    }
-
-    /**
-     * Set daily after expiry setting
-     *
-     * @param bool|string $enabled
-     * @return bool
-     */
-    public function set_daily_after_expiry($enabled) {
-        // Convert any non-empty value to boolean, ensuring '0' is properly handled as false
-        $this->settings['daily_after_expiry'] = !empty($enabled) && $enabled !== '0';
-        return $this->save();
-    }
+    // public function set_notification_emails($emails) {
+    //     $this->settings['notification_emails'] = array_map('sanitize_email', (array) $emails);
+    //     return $this->save();
+    // }
 
     /**
      * Update last check information

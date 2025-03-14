@@ -67,11 +67,13 @@ class Plugin {
             $notification_days = (array)$this->settings->get_notification_days();
             
             if ($days_remaining <= 0) {
-                // Certificate has expired
+                // Certificate has expired - always send notification
+                $this->notifier->send_expiry_notification($days_remaining, $result['expiry_date']);
                 $this->settings->update_last_check([
                     'status' => 'error',
                     'message' => sprintf(
-                        __('Certificate has expired on %s.', 'ssl-alert-wp'),
+                        // translators: %1$s: expired certificate message
+                        __('Certificate has expired on %1$s.', 'ssl-alert-wp'),
                         $result['expiry_date']
                     )
                 ]);
@@ -82,7 +84,8 @@ class Plugin {
                 $this->settings->update_last_check([
                     'status' => 'warning',
                     'message' => sprintf(
-                        __('WARNING: Certificate will expire in %d days (on %s). A notification email has been sent. Issued by %s for %s.', 'ssl-alert-wp'),
+                        // translators: %1$d: days remaining, %2$s: expiry date, %3$s: issuer, %4$s: subject
+                        __('WARNING: Certificate will expire in %1$d days (on %2$s). A notification email has been sent. Issued by %3$s for %4$s.', 'ssl-alert-wp'),
                         $days_remaining,
                         $result['expiry_date'],
                         $result['issuer'],
@@ -94,7 +97,8 @@ class Plugin {
                 $this->settings->update_last_check([
                     'status' => 'valid',
                     'message' => sprintf(
-                        __('Certificate is valid. Expires in %d days on %s. Issued by %s for %s.', 'ssl-alert-wp'),
+                        // translators: %1$d: days remaining, %2$s: expiry date, %3$s: issuer, %4$s: subject
+                        __('Certificate is valid. Expires in %1$d days on %2$s. Issued by %3$s for %4$s.', 'ssl-alert-wp'),
                         $days_remaining,
                         $result['expiry_date'],
                         $result['issuer'],

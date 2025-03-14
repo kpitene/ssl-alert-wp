@@ -12,7 +12,8 @@ jQuery(document).ready(function($) {
             type: 'POST',
             data: {
                 action: 'ssl_alert_wp_check_now',
-                _ajax_nonce: wpSslAlert.nonce
+                _ajax_nonce: wpSslAlert.nonce,
+                lang: wpSslAlert.language
             },
             success: function(response) {
                 if (response.success) {
@@ -40,7 +41,8 @@ jQuery(document).ready(function($) {
             type: 'POST',
             data: {
                 action: 'ssl_alert_wp_test_notification',
-                _ajax_nonce: wpSslAlert.nonce
+                _ajax_nonce: wpSslAlert.nonce,
+                lang: wpSslAlert.language
             },
             success: function(response) {
                 if (response.success) {

@@ -20,7 +20,7 @@ SSL Alert WP is a simple yet powerful plugin that helps you monitor your WordPre
 * Automatically monitors SSL certificate expiration for your WordPress site
 * Configurable notification schedule (default: 14 days, 7 days, 1 day before expiration)
 * Email notifications to site administrators or custom email addresses
-* Daily notifications after certificate expiration (optional)
+* Daily notifications after certificate expiration
 * Manual certificate check from WordPress admin panel
 * Multi-language support (English and French, with more languages planned)
 * Easy-to-use settings page in WordPress admin
@@ -69,8 +69,6 @@ To add a new translation:
 == Screenshots ==
 
 1. SSL Monitor settings page
-2. Certificate status display
-3. Email notification example
 
 == Changelog ==
 

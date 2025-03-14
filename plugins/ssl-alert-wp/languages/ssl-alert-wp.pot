@@ -1,0 +1,227 @@
+# Copyright (C) 2025 Kpitene
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: SSL Alert WP 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ssl-alert-wp\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-03-14T07:42:42+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.11.0\n"
+"X-Domain: ssl-alert-wp\n"
+
+#. Plugin Name of the plugin
+#: ssl-alert-wp.php
+msgid "SSL Alert WP"
+msgstr ""
+
+#. Plugin URI of the plugin
+#. Author URI of the plugin
+#: ssl-alert-wp.php
+msgid "https://wordpress.org/plugins/ssl-alert-wp/"
+msgstr ""
+
+#. Description of the plugin
+#: ssl-alert-wp.php
+msgid "Monitor your SSL certificate expiration and receive notifications before it expires."
+msgstr ""
+
+#. Author of the plugin
+#: ssl-alert-wp.php
+msgid "Kpitene"
+msgstr ""
+
+#. translators: %s: SSL certificate monitor title
+#: includes/Core/Admin.php:53
+msgid "SSL Certificate Monitor"
+msgstr ""
+
+#. translators: %s: SSL monitor title
+#: includes/Core/Admin.php:55
+msgid "SSL Monitor"
+msgstr ""
+
+#. translators: %s: SSL certificate monitoring settings title
+#: includes/Core/Admin.php:75
+msgid "SSL Certificate Monitoring Settings"
+msgstr ""
+
+#. translators: %s: URL to monitor
+#: includes/Core/Admin.php:83
+msgid "URL to Monitor"
+msgstr ""
+
+#. translators: %s: notification days
+#: includes/Core/Admin.php:92
+msgid "Notification Days"
+msgstr ""
+
+#. translators: %s: notification emails
+#: includes/Core/Admin.php:101
+msgid "Notification Emails"
+msgstr ""
+
+#. translators: %s: checking text
+#: includes/Core/Admin.php:133
+msgid "Checking..."
+msgstr ""
+
+#. translators: %s: check now text
+#: includes/Core/Admin.php:135
+#: includes/Core/Admin.php:186
+msgid "Check Now"
+msgstr ""
+
+#. translators: %s: test notification text
+#: includes/Core/Admin.php:137
+#: includes/Core/Admin.php:195
+msgid "Send Test Notification"
+msgstr ""
+
+#. translators: %s: last check time
+#: includes/Core/Admin.php:162
+msgid "Last check: %s"
+msgstr ""
+
+#: includes/Core/Admin.php:183
+msgid "Manual Check"
+msgstr ""
+
+#: includes/Core/Admin.php:184
+msgid "Click the button below to check the SSL certificate status immediately:"
+msgstr ""
+
+#: includes/Core/Admin.php:192
+msgid "Test Notification"
+msgstr ""
+
+#: includes/Core/Admin.php:193
+msgid "Click the button below to send a test notification:"
+msgstr ""
+
+#. translators: %s: configuration message
+#: includes/Core/Admin.php:208
+msgid "Configure how and when you want to be notified about SSL certificate expiration."
+msgstr ""
+
+#: includes/Core/Admin.php:219
+msgid "The HTTPS URL to monitor. Leave empty to use your site URL."
+msgstr ""
+
+#: includes/Core/Admin.php:236
+msgid "Comma-separated list of days before expiration to send notifications. Example: 14,7,1"
+msgstr ""
+
+#: includes/Core/Admin.php:253
+msgid "Comma-separated list of email addresses to notify. Leave empty to use admin email."
+msgstr ""
+
+#. translators: %s: unauthorized error
+#: includes/Core/Admin.php:266
+#: includes/Core/Admin.php:306
+msgid "Unauthorized"
+msgstr ""
+
+#. translators: %s: check failed error
+#: includes/Core/Admin.php:276
+msgid "Check failed - no result available"
+msgstr ""
+
+#. translators: %s: test notification subject
+#: includes/Core/Admin.php:311
+msgid "Test Notification from SSL Alert WP"
+msgstr ""
+
+#. translators: %s: test notification message
+#: includes/Core/Admin.php:313
+msgid "This is a test notification from SSL Alert WP."
+msgstr ""
+
+#. translators: %s: test notification success message
+#: includes/Core/Admin.php:320
+msgid "Test notification sent successfully."
+msgstr ""
+
+#. translators: %s: test notification failure message
+#: includes/Core/Admin.php:323
+msgid "Failed to send test notification."
+msgstr ""
+
+#. translators: %s: no URL provided error
+#: includes/Core/Certificate_Checker.php:19
+msgid "No URL provided"
+msgstr ""
+
+#. translators: %s: HTTPS protocol error
+#: includes/Core/Certificate_Checker.php:29
+msgid "URL must use HTTPS protocol"
+msgstr ""
+
+#. translators: %1$s: URL, %2$s: error message
+#: includes/Core/Certificate_Checker.php:60
+msgid "Could not connect to %1$s: %2$s"
+msgstr ""
+
+#. translators: %s: parse error
+#: includes/Core/Certificate_Checker.php:75
+msgid "Could not parse SSL certificate"
+msgstr ""
+
+#. translators: %s: Unknown
+#: includes/Core/Certificate_Checker.php:92
+msgid "Unknown"
+msgstr ""
+
+#. translators: %s: site name
+#: includes/Core/Notifier.php:34
+msgid "[%s] SSL Certificate Has Expired"
+msgstr ""
+
+#. translators: %1$s: site URL, %2$s: expiry date
+#: includes/Core/Notifier.php:39
+msgid "The SSL certificate for %1$s has expired on %2$s. Please renew it immediately to avoid browser warnings and potential security risks."
+msgstr ""
+
+#. translators: %1$s: site name, %2$d: days remaining
+#: includes/Core/Notifier.php:46
+msgid "[%1$s] SSL Certificate Expires in %2$d Days"
+msgstr ""
+
+#. translators: %1$s: site URL, %2$s: expiry date, %3$d: days remaining
+#: includes/Core/Notifier.php:52
+msgid "The SSL certificate for %1$s will expire on %2$s (%3$d days from now). Please ensure it is renewed before expiration to avoid browser warnings and potential security risks."
+msgstr ""
+
+#. translators: %s: site name
+#: includes/Core/Notifier.php:74
+msgid "[%s] SSL Certificate Check Failed"
+msgstr ""
+
+#. translators: %1$s: site URL, %2$s: error message
+#: includes/Core/Notifier.php:80
+msgid "Failed to check SSL certificate for %1$s. Error: %2$s"
+msgstr ""
+
+#. translators: %s: WordPress admin URL
+#: includes/Core/Notifier.php:142
+msgid "This notification was sent by the SSL Alert WP plugin. You can configure notification settings in the WordPress admin panel at %s."
+msgstr ""
+
+#. translators: %1$s: expired certificate message
+#: includes/Core/Plugin.php:77
+msgid "Certificate has expired on %1$s."
+msgstr ""
+
+#. translators: %1$d: days remaining, %2$s: expiry date, %3$s: issuer, %4$s: subject
+#: includes/Core/Plugin.php:89
+msgid "WARNING: Certificate will expire in %1$d days (on %2$s). A notification email has been sent. Issued by %3$s for %4$s."
+msgstr ""
+
+#. translators: %1$d: days remaining, %2$s: expiry date, %3$s: issuer, %4$s: subject
+#: includes/Core/Plugin.php:102
+msgid "Certificate is valid. Expires in %1$d days on %2$s. Issued by %3$s for %4$s."
+msgstr ""

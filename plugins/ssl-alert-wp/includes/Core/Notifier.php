@@ -30,22 +30,26 @@ class Notifier {
 
         if ($days_remaining <= 0) {
             $subject = sprintf(
+                // translators: %s: site name
                 __('[%s] SSL Certificate Has Expired', 'ssl-alert-wp'),
                 $site_name
             );
             $message = sprintf(
-                __('The SSL certificate for %s has expired on %s. Please renew it immediately to avoid browser warnings and potential security risks.', 'ssl-alert-wp'),
+                // translators: %1$s: site URL, %2$s: expiry date
+                __('The SSL certificate for %1$s has expired on %2$s. Please renew it immediately to avoid browser warnings and potential security risks.', 'ssl-alert-wp'),
                 $site_url,
                 $expiry_date
             );
         } else {
             $subject = sprintf(
-                __('[%s] SSL Certificate Expires in %d Days', 'ssl-alert-wp'),
+                // translators: %1$s: site name, %2$d: days remaining
+                __('[%1$s] SSL Certificate Expires in %2$d Days', 'ssl-alert-wp'),
                 $site_name,
                 $days_remaining
             );
             $message = sprintf(
-                __('The SSL certificate for %s will expire on %s (%d days from now). Please ensure it is renewed before expiration to avoid browser warnings and potential security risks.', 'ssl-alert-wp'),
+            // translators: %1$s: site URL, %2$s: expiry date, %3$d: days remaining
+            __('The SSL certificate for %1$s will expire on %2$s (%3$d days from now). Please ensure it is renewed before expiration to avoid browser warnings and potential security risks.', 'ssl-alert-wp'),
                 $site_url,
                 $expiry_date,
                 $days_remaining
@@ -66,12 +70,14 @@ class Notifier {
         $site_url = $this->settings->get_monitored_url();
 
         $subject = sprintf(
+            // translators: %s: site name
             __('[%s] SSL Certificate Check Failed', 'ssl-alert-wp'),
             $site_name
         );
         
         $message = sprintf(
-            __('Failed to check SSL certificate for %s. Error: %s', 'ssl-alert-wp'),
+            // translators: %1$s: site URL, %2$s: error message
+            __('Failed to check SSL certificate for %1$s. Error: %2$s', 'ssl-alert-wp'),
             $site_url,
             $error
         );
@@ -124,15 +130,17 @@ class Notifier {
         </head>
         <body>
             <div class="header">
-                <h1><?php echo get_bloginfo('name'); ?></h1>
+                <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
             </div>
             <div class="content">
-                <?php echo wpautop($content); ?>
+                <?php echo esc_html($content); ?>
             </div>
             <div class="footer">
-                <?php echo sprintf(
-                    __('This notification was sent by the SSL Alert WP plugin. You can configure notification settings in the WordPress admin panel at %s.', 'ssl-alert-wp'),
-                    admin_url('options-general.php?page=ssl-alert-wp')
+                <?php 
+                echo sprintf(
+                    // translators: %s: WordPress admin URL
+                    esc_html(__('This notification was sent by the SSL Alert WP plugin. You can configure notification settings in the WordPress admin panel at %s.', 'ssl-alert-wp')),
+                    esc_url(admin_url('options-general.php?page=ssl-alert-wp'))
                 ); ?>
             </div>
         </body>
